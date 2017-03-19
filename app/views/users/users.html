@@ -1,0 +1,35 @@
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Users <small> Manage users</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <flash-message duration="99999999" show-close="true">
+                </flash-message>
+            </div>
+        </div>
+
+        <div class="row" cg-busy="{promise:getUsersPromise,message:'Loading',minDuration:500,templateUrl:'/views/sharedViews/loading.html'}">
+            <div class="col-md-12">
+                <tbl-directive
+                templateUrl="scripts/directives/dataTable/users/users.html" 
+                callback="setSelectedObject(obj,action)"
+                table-data="users">
+                </tbl-directive>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>

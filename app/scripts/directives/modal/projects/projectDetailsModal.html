@@ -1,0 +1,128 @@
+<modal mtitle="View Project Details" mtemplateurl="/scripts/directives/modal/modalTemplateNoFooter.html" mwidth="60" mid="projectDetailsModal"
+    mad="true">
+    <form ng-submit="onSubmit()" novalidate="novalidate" ng-submit-force="true" name="projectDetailsForm">
+        <fieldset>
+            <div class="row" ng-if="project.task_set.length === 0" style="display: table-cell">
+                This project has no tasks assigned to it.
+            </div>
+            <div class="row" ng-repeat="t in project.task_set">
+                <div class="col-md-12">
+                    <h3>Task set</h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            Title
+                        </div>
+                        <div class="col-md-6">
+                            : {{t.title === "" ? "N/A" : t.title}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            Due Date
+                        </div>
+                        <div class="col-md-6">
+                            : {{t.due_date === null || t.due_date === "" || t.due_date === undefined ? "N/A" : t.due_date}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            Estimated Hours
+                        </div>
+                        <div class="col-md-6">
+                            : {{t.estimated_hours === undefined || t.estimated_hours === "" ? "N/A" : t.estimated_hours}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            Project
+                        </div>
+                        <div class="col-md-6">
+                            : {{t.project === undefined || t.project === "" ? "N/A" : t.project}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" ng-repeat="r in project.resource_set">
+                <div class="col-md-12">
+                    <h3>Resource set</h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            User
+                        </div>
+                        <div class="col-md-6">
+                            : {{r.user === "" ? "N/A" : t.user}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            Rate
+                        </div>
+                        <div class="col-md-6">
+                            : {{r.rate === null || r.rate === "" || r.rate === undefined ? "N/A" : r.rate}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            Created
+                        </div>
+                        <div class="col-md-6">
+                            : {{r.created === null || r.created === "" || r.created === undefined ? "N/A" : r.created | date:'medium'}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                         <div class="col-md-6">
+                            Updated
+                        </div>
+                        <div class="col-md-6">
+                            : {{r.updated === null || r.updated === "" || r.updated === undefined ? "N/A" : r.updated | date:'medium'}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            Start Date
+                        </div>
+                        <div class="col-md-6">
+                            : {{t.start_date === undefined || t.start_date === "" ? "N/A" : t.start_date}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            End Date
+                        </div>
+                        <div class="col-md-6">
+                            : {{t.end_date === undefined || t.end_date === "" ? "N/A" : t.end_date}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            Agreed Hours per Month
+                        </div>
+                        <div class="col-md-6">
+                            : {{t.agreed_hours_per_month === undefined || t.agreed_hours_per_month === "" ? "N/A" : t.agreed_hours_per_month}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </fieldset>
+        <div class="row">
+            <br/>
+            <div class="col-sm-6 col-md-3 col-lg-3"></div>
+            <div class="form-group col-sm-6 col-md-9 col-lg-">
+
+                <button id="closeModalBtn" class="btn btn-default pull-right" data-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </form>
+</modal>
