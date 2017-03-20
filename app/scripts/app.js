@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-    .module('uiApp', ['ui.router', 'toastr', 'jcs-autoValidate', 'ngFlash', 'angular-storage','cgBusy'])
+    .module('uiApp', ['ui.router', 'toastr', 'jcs-autoValidate', 'ngFlash', 'angular-storage','cgBusy','datePicker'])
     .run(['validator',
         function (validator) {
             validator.setValidElementStyling(false);

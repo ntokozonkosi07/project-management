@@ -3,6 +3,8 @@ angular
     .module('uiApp')
     .service('globals', function globals($http, $q, $state) {
 
+        var defer = $q.defer();
+
         var httpRequestErrorHandling = function (error) {
             debugger;
             var tempErrorMsg;
@@ -22,6 +24,15 @@ angular
             console.log("==========");
 
             return tempErrorMsg;
+        };
+
+        httpRequestErrorHand = function(error){
+                        defer.reject({
+                            errorMsg: errorhttpRequestErrorHandling(error)
+                        });
+        };
+        var resovle = function(res){
+            defer.resolve(res);
         };
 
         return {
@@ -63,6 +74,36 @@ angular
                 var defer = $q.defer();
 
                 $http.delete(url)
+                    .then(function (res) {
+
+                        defer.resolve(res);
+                    },
+                    function (error) {
+                        var errorMsg = httpRequestErrorHandling(error);
+
+                        defer.reject({
+                            errorMsg: errorMsg
+                        });
+                    });
+                return defer.promise;
+            },
+            putHttpRequest: function (url,data) {
+
+                $http.put(url,data)
+                    .then(resovle,
+                    function (error) {
+                        var errorMsg = httpRequestErrorHandling(error);
+
+                        defer.reject({
+                            errorMsg: errorMsg
+                        });
+                    });
+                return defer.promise;
+            },
+            patchtHttpRequest: function (url,data) {
+                var defer = $q.defer();
+
+                $http.patch(url,data)
                     .then(function (res) {
 
                         defer.resolve(res);

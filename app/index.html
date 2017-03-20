@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
   <link rel="stylesheet" href="bower_components/angular-flash-alert/dist/angular-flash.css" />
   <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
+  <link rel="stylesheet" href="bower_components/angular-datepicker/dist/angular-datepicker.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -64,7 +66,7 @@
 
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
-  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/jquery/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -74,6 +76,10 @@
   <script src="bower_components/a0-angular-storage/dist/angular-storage.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-busy/dist/angular-busy.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+  <script src="bower_components/angular-datepicker/dist/angular-datepicker.js"></script>
+  <script src="bower_components/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -83,16 +89,34 @@
   <script src="scripts/controllers/login/loginController.js"></script>
   <script src="scripts/controllers/menu/menuController.js"></script>
   <script src="scripts/controllers/users/userController.js"></script>
+
   <script src="scripts/controllers/projects/projectController.js"></script>
+  <script src="scripts/controllers/projects/newProjectController.js"></script>
+  <script src="scripts/controllers/projects/editProjectController.js"></script>
+
+  <script src="scripts/controllers/task/taskController.js"></script>
+  <script src="scripts/controllers/task/newTaskController.js"></script>
+  <script src="scripts/controllers/task/editTaskController.js"></script>
+
+  <script src="scripts/controllers/resources/resourceController.js"></script>
+  <script src="scripts/controllers/resources/newResourceController.js"></script>
+  <script src="scripts/controllers/resources/editResourceController.js"></script>
 
   <script src="scripts/services/globals.js"></script>
   <script src="scripts/services/login/loginService.js"></script>
   <script src="scripts/services/futureStates/futureStateRegistrationService.js"></script>
+
   <script src="scripts/services/users/userService.js"></script>
+
   <script src="scripts/services/projects/projectService.js"></script>
+
+  <script src="scripts/services/tasks/taskService.js"></script>
+
+  <script src="scripts/services/resources/resourcesService.js"></script>
 
   <script src="scripts/directives/dataTable/dataTableDirective.js"></script>
   <script src="scripts/directives/modal/modalDirective.js"></script>
+  <script src="scripts/directives/switch/switchDirective.js"></script>
   <!-- endbuild -->
 </body>
 

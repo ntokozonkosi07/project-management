@@ -10,25 +10,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-            <a class="navbar-brand" href="index.html">Project Management Sys</a>
+            <a class="navbar-brand">Project Management Sys</a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <!--
-                            <li>
-                            <a ><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a ><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
-                        <li>
-                            <a ><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        -->
                     <li>
                         <a><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                     </li>
@@ -42,7 +30,37 @@
                     <a ui-sref="dash.home"><i class="fa fa-users"></i> Users</a>
                 </li>
                 <li>
-                    <a ui-sref="dash.projects"><i class="fa fa-fw fa-bar-chart-o"></i> Projects</a>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#project"><i class="fa fa-fw fa-bar-chart-o"></i> Projects <i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="project" class="collapse">
+                        <li>
+                            <a ui-sref="dash.projects">Manage Projects</a>
+                        </li>
+                        <li>
+                            <a ui-sref="dash.newProject">New Project</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#task"><i class="fa fa-tasks"></i> Tasks <i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="task" class="collapse">
+                        <li>
+                            <a ui-sref="dash.tasks">Manage Tasks</a>
+                        </li>
+                        <li>
+                            <a ui-sref="dash.newTask">New Task</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#resources"><i class="fa fa-folder"></i> Resources <i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="resources" class="collapse">
+                        <li>
+                            <a ui-sref="dash.resources">Manage Resources</a>
+                        </li>
+                        <li>
+                            <a ui-sref="dash.newResource">New Task</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>

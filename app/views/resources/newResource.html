@@ -1,0 +1,114 @@
+<div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Resources <small> New Resource</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <flash-message duration="99999999" show-close="true">
+                </flash-message>
+            </div>
+        </div>
+
+        <div class="row" cg-busy="{promise:createResourcePromise,message:'Loading',minDuration:500,templateUrl:'/views/sharedViews/loading.html'}">
+            <div class="col-md-8">
+                <form ng-submit="onSubmit()" novalidate="novalidate" ng-submit-force="true" name="newResourceForm">
+                    <fieldset>
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="col-md-4">
+                                    User
+                                </div>
+                                <div class="col-md-1">
+                                    <i class="fa fa-asterisk requiredAstrik" aria-hidden="true"></i>
+                                </div>
+                                <div class="form-group col-md-7">
+                                    <select class="form-control" ng-model="newResource.user" ng-options="u.id as u.first_name + ' '+ u.last_name for u in users" >
+                                        <option value="" disabled>-- Please Select User --</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4">
+                                    Start Date
+                                </div>
+                                <div class="col-md-1">
+                                    <i class="fa fa-asterisk requiredAstrik" aria-hidden="true"></i>
+                                </div>
+                                <div class="form-group col-md-7">
+                                    <input required min-view="date" class="form-control" ng-model="newResource.start_date" placeholder="Start date (YYYY-MM-DD)"
+                                        date-time format="YYYY-MM-DD">
+                                </div>
+
+                                <div class="col-md-4">
+                                    End Date
+                                </div>
+                                <div class="col-md-1">
+                                    <!--<i class="fa fa-asterisk requiredAstrik" aria-hidden="true"></i>-->
+                                </div>
+                                <div class="form-group col-md-7" >
+                                    <input required min-view="date" class="form-control" ng-model="newResource.end_date" placeholder="End Date (YYYY-MM-DD)" date-time
+                                        format="YYYY-MM-DD">
+                                </div>
+                                
+
+                                <div class="col-md-4">
+                                    Rate
+                                </div>
+                                <div class="col-md-1">
+                                    <!--<i class="fa fa-asterisk requiredAstrik" aria-hidden="true"></i>-->
+                                </div>
+                                <div class="form-group col-md-7">
+                                    <input class="form-control" placeholder="Rate" ng-model="newResource.rate" type="number" required>
+                                </div>
+
+                                <div class="col-md-4">
+                                    Agreed hours per month
+                                </div>
+                                <div class="col-md-1">
+                                    <!--<i class="fa fa-asterisk requiredAstrik" aria-hidden="true"></i>-->
+                                </div>
+                                <div class="form-group col-md-7">
+                                    <input class="form-control" placeholder="Agreed hours per month" ng-model="newResource.agreed_hours_per_month" type="number" required>
+                                </div>
+
+                                <div class="col-md-4">
+                                    Project
+                                </div>
+                                <div class="col-md-1">
+                                    <i class="fa fa-asterisk requiredAstrik" aria-hidden="true"></i>
+                                </div>
+                                <div class="form-group col-md-7">
+                                    <select class="form-control" ng-model="newResource.project" ng-options="p.pk as p.title for p in projects" required>
+                                        <option value="" disabled>-- Please Select Project --</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <button class="btn btn-success pull-right" ng-click="createNewResource(newResource, newResourceForm.$valid)">
+                            Create Resource
+                        </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+</div>

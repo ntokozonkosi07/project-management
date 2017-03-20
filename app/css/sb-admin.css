@@ -5,6 +5,10 @@
  */
 
 /* Global Styles */
+.requiredAstrik{
+    color:#a94442;
+    font-size:8px;
+}
 
 @-webkit-keyframes fadeInUp {
     0% {

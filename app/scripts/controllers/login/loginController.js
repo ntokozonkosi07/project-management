@@ -43,6 +43,47 @@ angular.module('uiApp')
               url: '/projects',
               templateUrl: 'views/projects/projects.html',
               controller: 'projectController'
+            },{
+              state:'dash.newProject',
+              url: '/projects/new',
+              templateUrl: 'views/projects/newProject.html',
+              controller: 'newProjectController'
+            },{
+              state:'dash.editProject',
+              url: '/projects/edit',
+              templateUrl: 'views/projects/editProject.html',
+              controller: 'editProjectController'
+            },{
+              state:'dash.tasks',
+              url: '/tasks',
+              templateUrl: 'views/tasks/tasks.html',
+              controller: 'taskController'
+            },{
+              state:'dash.newTask',
+              url: '/task/new',
+              templateUrl: 'views/tasks/newTask.html',
+              controller: 'newTaskController'
+            },{
+              state:'dash.editTask',
+              url: '/task/edit',
+              templateUrl: 'views/tasks/editTask.html',
+              controller: 'editTaskController'
+            },{
+              state:'dash.resources',
+              url: '/resources',
+              templateUrl: 'views/resources/resources.html',
+              controller: 'resourceController'
+            },{
+              state:'dash.newResource',
+              url: '/resource/new',
+              templateUrl: 'views/resources/newResource.html',
+              controller: 'newResourceController'
+            },
+            {
+              state:'dash.editResource',
+              url: '/resource/edit',
+              templateUrl: 'views/resources/editResource.html',
+              controller: 'editResourceController'
             }];
 
             for (var index = 0; index < states.length; index++) {
@@ -51,7 +92,7 @@ angular.module('uiApp')
 
             store.set('tokeid',res.data.token);
 
-            $state.go('dash.home');
+            $state.go('dash.projects');
 
           }, (error) => {
             Flash.clear();

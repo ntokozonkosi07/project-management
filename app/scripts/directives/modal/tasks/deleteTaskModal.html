@@ -1,0 +1,51 @@
+<modal mtitle="Are you sure, you'd like to delete Task?" mtemplateurl="/scripts/directives/modal/modalTemplateNoFooter.html"
+    mwidth="60" mid="deleteTaskModal" mad="true">
+    <form ng-submit="onSubmit()" novalidate="novalidate" ng-submit-force="true" name="projectDetailsForm">
+        <fieldset>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            Title
+                        </div>
+                        <div class="col-md-6">
+                            : {{task.title}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            Due Date
+                        </div>
+                        <div class="col-md-6">
+                            : {{task.due_date | date:'medium'}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            Estimated Hours
+                        </div>
+                        <div class="col-md-6">
+                            : {{project.estimated_hours}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </fieldset>
+        <div class="row">
+            <br/>
+            <div class="col-sm-6 col-md-3 col-lg-3"></div>
+            <div class="form-group col-sm-6 col-md-9 col-lg-">
+                <button id="closeModalBtn" class="btn btn-success pull-right" ng-click="deleteTask(project)" data-dismiss="modal">
+                    Yes
+                </button>
+
+                <button id="closeModalBtn" class="btn btn-default pull-right" data-dismiss="modal">
+                    No
+                </button>
+            </div>
+        </div>
+    </form>
+</modal>
