@@ -20,11 +20,6 @@ angular.module('uiApp')
           toastr.warning(msg, 'Warning');
           return;
         }
-
-        credentials = {
-          username: "jacob.zuma",
-          password: "tangent"
-        };
         
         loginService.login(credentials)
           .then((res) => {
